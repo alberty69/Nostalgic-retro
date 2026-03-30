@@ -1,107 +1,52 @@
-HTML:<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nostalgic Retro - Jogos Clássicos</title>
+    <title>Nostalgic Retro - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="scanlines"></div>
-
     <header>
-        <h1 class="logo glow-neon-pink" onclick="showView('home')" style="cursor: pointer;">NOSTALGIC RETRO</h1>
+        <h1 class="logo glow-neon-pink"><a href="index.html" style="text-decoration:none; color:inherit;">NOSTALGIC RETRO</a></h1>
         <nav>
-            <a href="#" onclick="showView('home')">Jogos</a>
-            <a href="#" onclick="showView('premium')" class="glow-neon-yellow">Premium</a>
+            <a href="index.html">Jogos</a>
+            <a href="premium.html" class="glow-neon-yellow">Premium</a>
         </nav>
     </header>
 
     <main>
-        <div id="view-home" class="view active">
-            <section class="hero">
-                <h2 class="glow-neon-green">INSERT COIN TO PLAY</h2>
-                <div class="terminal-box">
-                    <p>--- TERMINAL DO JOGADOR ---</p>
-                    <p>Descubra seu potencial!</p>
-                    <div class="input-group">
-                        <input type="text" id="nomeUsuario" placeholder="Digite seu nome (P1)">
-                        <button class="btn-retro btn-green" onclick="gerarMensagem()">Descobrir</button>
-                    </div>
-                    <p id="resultado" class="blink"></p>
+        <section class="hero">
+            <h2 class="glow-neon-green">INSERT COIN TO PLAY</h2>
+            <div class="terminal-box">
+                <p>--- TERMINAL DO JOGADOR ---</p>
+                <div class="input-group">
+                    <input type="text" id="nomeUsuario" placeholder="NOME (P1)">
+                    <button class="btn-retro btn-green" onclick="gerarMensagem()">OK</button>
                 </div>
-            </section>
+                <p id="resultado" class="blink"></p>
+            </div>
+        </section>
 
-            <section id="jogos" class="catalog-section">
-                <div class="filters">
-                    <select id="filtroConsole" class="filter-select">
-                        <option value="todos">Todos os Consoles</option>
-                        <option value="nintendo">Nintendo</option>
-                        <option value="sega">SEGA</option>
-                        <option value="arcade">Arcade</option>
-                    </select>
+        <section class="catalog-section">
+            <div class="games-grid">
+                <!-- Exemplo de 1 jogo. Você pode copiar este bloco para outros -->
+                <div class="game-card" onclick="window.location.href='detalhes.html?jogo=mario'">
+                    <div class="game-cover" style="background-color: #e0115f;"><span>MARIO</span></div>
+                    <h3 class="game-title">Super Mario World</h3>
+                    <span class="game-category">Nintendo • Plataforma</span>
                 </div>
-                <div id="gamesGrid" class="games-grid"></div>
-            </section>
-        </div>
 
-        <div id="view-details" class="view">
-            <section class="game-details-preview">
-                <button class="btn-retro btn-green" onclick="showView('home')" style="margin-bottom: 20px;">⬅ Voltar</button>
-                <div class="details-container">
-                    <div class="details-left">
-                        <div id="detail-cover" class="big-cover">COVE</div>
-                    </div>
-                    <div class="details-right">
-                        <h2 id="detail-title" class="glow-neon-yellow">Título do Jogo</h2>
-                        <p id="detail-desc" class="desc">Descrição do jogo...</p>
-                        <p id="detail-cat" class="cat">Categoria e Console</p>
-                        <div class="actions">
-                            <button class="btn-retro btn-pink" onclick="assistirAnuncio()">📺 Assistir 3 Anúncios</button>
-                            <button class="btn-retro btn-yellow" onclick="showView('premium')">⭐ Assinar Premium</button>
-                        </div>
-                    </div>
+                <div class="game-card" onclick="window.location.href='detalhes.html?jogo=sonic'">
+                    <div class="game-cover" style="background-color: #0000ff;"><span>SONIC</span></div>
+                    <h3 class="game-title">Sonic The Hedgehog</h3>
+                    <span class="game-category">SEGA • Ação</span>
                 </div>
-            </section>
-        </div>
-
-        <div id="view-premium" class="view">
-            <section class="subscription-section">
-                <button class="btn-retro btn-green" onclick="showView('home')" style="margin-bottom: 20px;">⬅ Voltar</button>
-                <h2 class="section-title glow-neon-pink">ESCOLHA SEU PLANO</h2>
-                <div class="plans-container">
-                    <div class="plan-card">
-                        <h3>MENSAL</h3>
-                        <div class="price">R$ 19,90<span>/mês</span></div>
-                        <ul>
-                            <li>Acesso Ilimitado</li>
-                            <li>Zero Anúncios</li>
-                            <li>Todos os Consoles</li>
-                        </ul>
-                        <button class="btn-retro btn-green">ASSINAR</button>
-                    </div>
-                    
-                    <div class="plan-card highlight">
-                        <h3>ANUAL <span class="badge">PROMO</span></h3>
-                        <div class="price">R$ 14,90<span>/mês</span></div>
-                        <ul>
-                            <li>Acesso Ilimitado</li>
-                            <li>Zero Anúncios</li>
-                            <li>Todos os Consoles</li>
-                            <li>Jogos Exclusivos</li>
-                        </ul>
-                        <button class="btn-retro btn-yellow">ASSINAR</button>
-                    </div>
-                </div>
-            </section>
-        </div>
+                <!-- Repita o bloco acima para mais jogos -->
+            </div>
+        </section>
     </main>
-
-    <footer>
-        <p>© 2026 NOSTALGIC RETRO - PRESS START TO CONTINUE</p>
-    </footer>
-
     <script src="script.js"></script>
 </body>
-                            </html>
+</html>

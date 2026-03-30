@@ -1,127 +1,81 @@
 // ==========================================
-// 1. DADOS DOS JOGOS (Nossa "API" local)
+// 1. BANCO DE DADOS DOS JOGOS (15 Jogos)
 // ==========================================
 const gamesData = [
-    { id: 1, title: 'Super Mario World', console: 'nintendo', category: 'Plataforma', color: '#e0115f', shortName: 'MARIO', desc: 'Aventure-se na Dinosaur Land com Mario, Luigi e Yoshi para resgatar a Princesa Toadstool das garras de Bowser!' },
-    { id: 2, title: 'Sonic The Hedgehog', console: 'sega', category: 'Ação', color: '#0000ff', shortName: 'SONIC', desc: 'Corra na velocidade do som, colete anéis e derrote o malvado Dr. Robotnik neste clássico inesquecível do Mega Drive.' },
-    { id: 3, title: 'Pac-Man', console: 'arcade', category: 'Puzzle', color: '#ffd700', shortName: 'PAC-MAN', desc: 'Coma as pastilhas, fuja dos fantasmas (Blinky, Pinky, Inky e Clyde) e alcance a maior pontuação possível no fliperama!' },
-    { id: 4, title: 'The Legend of Zelda', console: 'nintendo', category: 'RPG', color: '#2e8b57', shortName: 'ZELDA', desc: 'Explore o reino de Hyrule, encontre a Master Sword e derrote Ganon para salvar a Princesa Zelda.' },
-    { id: 5, title: 'Donkey Kong Country', console: 'nintendo', category: 'Plataforma', color: '#8b4513', shortName: 'DKC', desc: 'Ajude Donkey e Diddy Kong a recuperar seu estoque de bananas roubado pelo terrível King K. Rool.' },
-    { id: 6, title: 'Street Fighter II', console: 'arcade', category: 'Luta', color: '#cc0000', shortName: 'SF II', desc: 'Escolha seu lutador favorito e viaje o mundo para enfrentar os guerreiros mais fortes. HADOUKEN!' },
-    { id: 7, title: 'Mortal Kombat', console: 'arcade', category: 'Luta', color: '#800000', shortName: 'MK', desc: 'Participe do torneio mais sangrento da Terra. Descubra os Fatalities e derrote Shang Tsung. GET OVER HERE!' },
-    { id: 8, title: 'Mega Man X', console: 'nintendo', category: 'Ação', color: '#1e90ff', shortName: 'MEGA X', desc: 'Assuma o controle de X, absorva os poderes dos Mavericks derrotados e salve o mundo da ameaça de Sigma.' },
-    { id: 9, title: 'Castlevania', console: 'nintendo', category: 'Aventura', color: '#4b0082', shortName: 'DRACULA', desc: 'Armado com seu chicote Vampire Killer, explore o castelo assombrado para derrotar o Conde Drácula.' },
-    { id: 10, title: 'Golden Axe', console: 'sega', category: 'Hack n Slash', color: '#daa520', shortName: 'AXE', desc: 'Escolha seu guerreiro e use magias poderosas para derrotar Death Adder e salvar o rei.' },
-    { id: 11, title: 'Streets of Rage', console: 'sega', category: 'Beat em up', color: '#ff4500', shortName: 'RAGE', desc: 'Limpe as ruas da cidade de um sindicato do crime usando apenas seus punhos, canos e invocações da polícia.' },
-    { id: 12, title: 'Altered Beast', console: 'sega', category: 'Ação', color: '#8b008b', shortName: 'BEAST', desc: '"Rise from your grave!" Transforme-se em bestas mitológicas e resgate a filha de Zeus.' },
-    { id: 13, title: 'Space Invaders', console: 'arcade', category: 'Tiro', color: '#00fa9a', shortName: 'ALIENS', desc: 'Defenda a Terra contra ondas infinitas de alienígenas descendo pela tela. O clássico que iniciou tudo!' },
-    { id: 14, title: 'Galaga', console: 'arcade', category: 'Tiro', color: '#4682b4', shortName: 'GALAGA', desc: 'Controle sua nave e destrua as formações inimigas no espaço. Cuidado com o raio trator!' },
-    { id: 15, title: 'Chrono Trigger', console: 'nintendo', category: 'RPG', color: '#ff8c00', shortName: 'CHRONO', desc: 'Viaje através do tempo com Crono e seus amigos para impedir que o parasita alienígena Lavos destrua o futuro.' }
+    { id: 'mario', title: 'Super Mario World', console: 'Nintendo', category: 'Plataforma', color: '#e0115f', short: 'MARIO', desc: 'Resgate a Princesa Peach e explore a Ilha dos Dinossauros com Yoshi.' },
+    { id: 'sonic', title: 'Sonic The Hedgehog', console: 'SEGA', category: 'Ação', color: '#0000ff', short: 'SONIC', desc: 'Corra em alta velocidade para libertar os animais do Dr. Robotnik.' },
+    { id: 'pacman', title: 'Pac-Man', console: 'Arcade', category: 'Puzzle', color: '#ffd700', short: 'PAC-MAN', desc: 'Coma todas as pastilhas e fuja dos fantasmas coloridos no labirinto.' },
+    { id: 'zelda', title: 'The Legend of Zelda', console: 'Nintendo', category: 'RPG', color: '#2e8b57', short: 'ZELDA', desc: 'Encontre os fragmentos da Triforce e derrote Ganon para salvar Hyrule.' },
+    { id: 'sf2', title: 'Street Fighter II', console: 'Arcade', category: 'Luta', color: '#cc0000', short: 'SF II', desc: 'Escolha seu lutador e prove quem é o World Warrior mais forte.' },
+    { id: 'dkc', title: 'Donkey Kong Country', console: 'Nintendo', category: 'Plataforma', color: '#8b4513', short: 'DKC', desc: 'Recupere o estoque de bananas roubado pelo Rei K. Rool.' },
+    { id: 'mk', title: 'Mortal Kombat', console: 'Arcade', category: 'Luta', color: '#444', short: 'MK', desc: 'Lute pelo destino da Terra no torneio mais sangrento de todos.' },
+    { id: 'megaman', title: 'Mega Man X', console: 'Nintendo', category: 'Ação', color: '#1e90ff', short: 'MEGA X', desc: 'Derrote os Mavericks e absorva seus poderes para salvar o futuro.' },
+    { id: 'sor', title: 'Streets of Rage', console: 'SEGA', category: 'Beat em up', color: '#ff4500', short: 'RAGE', desc: 'Limpe as ruas da cidade enfrentando o sindicato do crime de Mr. X.' },
+    { id: 'metroid', title: 'Super Metroid', console: 'Nintendo', category: 'Aventura', color: '#4b0082', short: 'SAMUS', desc: 'Explore o planeta Zebes como a caçadora de recompensas Samus Aran.' },
+    { id: 'chrono', title: 'Chrono Trigger', console: 'Nintendo', category: 'RPG', color: '#ff8c00', short: 'CHRONO', desc: 'Viaje através do tempo para impedir o apocalipse causado por Lavos.' },
+    { id: 'golden', title: 'Golden Axe', console: 'SEGA', category: 'Ação', color: '#daa520', short: 'AXE', desc: 'Guerreiros medievais em uma jornada épica contra Death Adder.' },
+    { id: 'tetris', title: 'Tetris', console: 'Arcade', category: 'Puzzle', color: '#00fa9a', short: 'TETRIS', desc: 'Encaixe as peças perfeitamente para limpar as linhas e pontuar.' },
+    { id: 'doom', title: 'DOOM', console: 'Arcade', category: 'FPS', color: '#333', short: 'DOOM', desc: 'Enfrente hordas de demônios em Marte com um arsenal pesado.' },
+    { id: 'castlevania', title: 'Castlevania', console: 'Nintendo', category: 'Aventura', color: '#800000', short: 'BELMONT', desc: 'Use o chicote sagrado para invadir o castelo do Conde Drácula.' }
 ];
 
 // ==========================================
-// 2. SISTEMA DE ROTEAMENTO (SPA)
+// 2. FUNÇÕES DA HOME (index.html)
 // ==========================================
-function showView(viewId) {
-    // Esconde todas as views
-    document.querySelectorAll('.view').forEach(view => {
-        view.classList.remove('active');
-    });
-    
-    // Mostra a view solicitada (com prefixo view-)
-    const selectedView = document.getElementById(`view-${viewId}`);
-    if (selectedView) {
-        selectedView.classList.add('active');
-    }
-
-    // Rola para o topo da página suavemente
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// ==========================================
-// 3. RENDERIZAÇÃO E DETALHES DOS JOGOS
-// ==========================================
-const gamesGrid = document.getElementById('gamesGrid');
-
-function renderGames(filterConsole = 'todos') {
-    gamesGrid.innerHTML = ''; // Limpa a grid
-
-    const filteredGames = gamesData.filter(game => 
-        filterConsole === 'todos' || game.console === filterConsole
-    );
-
-    filteredGames.forEach(game => {
-        // Formata o console para exibição elegante
-        const consoleName = game.console.charAt(0).toUpperCase() + game.console.slice(1);
-        
-        const card = document.createElement('div');
-        card.className = 'game-card';
-        card.setAttribute('data-console', game.console);
-        
-        // Define que ao clicar no card, vai para os detalhes
-        card.onclick = () => openGameDetails(game.id);
-
-        card.innerHTML = `
-            <div class="game-cover" style="background-color: ${game.color}; color: ${game.console === 'arcade' ? 'black' : 'white'};">
-                <span>${game.shortName}</span>
-            </div>
-            <h3 class="game-title">${game.title}</h3>
-            <span class="game-category">${consoleName} • ${game.category}</span>
-        `;
-        
-        gamesGrid.appendChild(card);
-    });
-}
-
-function openGameDetails(gameId) {
-    const game = gamesData.find(g => g.id === gameId);
-    if (!game) return;
-
-    // Formata console
-    const consoleName = game.console.charAt(0).toUpperCase() + game.console.slice(1);
-
-    // Preenche a View de Detalhes
-    const coverElement = document.getElementById('detail-cover');
-    coverElement.style.backgroundColor = game.color;
-    coverElement.style.color = game.console === 'arcade' ? 'black' : 'white';
-    coverElement.innerText = game.shortName;
-
-    document.getElementById('detail-title').innerText = game.title;
-    document.getElementById('detail-desc').innerText = game.desc;
-    document.getElementById('detail-cat').innerText = `Categoria: ${game.category} | Console: ${consoleName}`;
-
-    // Troca de tela
-    showView('details');
-}
-
-// ==========================================
-// 4. INTERATIVIDADE E FILTROS
-// ==========================================
-// Filtro do Catálogo
-document.getElementById('filtroConsole').addEventListener('change', (e) => {
-    renderGames(e.target.value);
-});
-
-// Terminal do Jogador
 function gerarMensagem() {
-    let nome = document.getElementById("nomeUsuario").value;
-    let resultado = document.getElementById("resultado");
-    
+    const nome = document.getElementById("nomeUsuario").value;
+    const resultado = document.getElementById("resultado");
     if(nome.trim() === "") {
-        resultado.innerText = "> ERRO: Insira o nome do Player 1!";
-        resultado.style.color = "var(--neon-pink)";
+        resultado.innerText = "> ERRO: INSIRA O NOME!";
     } else {
-        resultado.innerText = `> LOGIN ACEITO: ${nome.toUpperCase()}, você tem potencial para zerar este fliperama!`;
-        resultado.style.color = "var(--neon-green)";
+        resultado.innerText = `> BEM-VINDO, ${nome.toUpperCase()}!`;
     }
 }
 
-// Botão de Anúncios
-function assistirAnuncio() {
-    alert("CARREGANDO ANÚNCIO...\n\nBrincadeira! Mas se você assinar o Premium, nem precisaria ver isso. 😉");
+// Renderiza a lista de jogos na Home
+function carregarJogosHome() {
+    const grid = document.querySelector('.games-grid');
+    if (!grid) return;
+
+    grid.innerHTML = gamesData.map(jogo => `
+        <div class="game-card" onclick="window.location.href='detalhes.html?id=${jogo.id}'">
+            <div class="game-cover" style="background-color: ${jogo.color}">
+                <span>${jogo.short}</span>
+            </div>
+            <h3 class="game-title">${jogo.title}</h3>
+            <span class="game-category">${jogo.console} • ${jogo.category}</span>
+        </div>
+    `).join('');
 }
 
-// Inicializa a Home ao carregar a página
+// ==========================================
+// 3. FUNÇÕES DE DETALHES (detalhes.html)
+// ==========================================
+function carregarDetalhesJogo() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const jogo = gamesData.find(g => g.id === id);
+
+    if (jogo) {
+        document.title = `Nostalgic Retro - ${jogo.title}`;
+        document.getElementById('game-title').innerText = jogo.title;
+        document.getElementById('game-desc').innerText = jogo.desc;
+        
+        const cover = document.getElementById('game-cover');
+        cover.style.backgroundColor = jogo.color;
+        cover.innerText = jogo.short;
+    }
+}
+
+// ==========================================
+// 4. INICIALIZAÇÃO
+// ==========================================
 window.onload = () => {
-    renderGames(); // Renderiza todos os jogos
+    // Verifica em qual página estamos
+    if (document.querySelector('.games-grid')) {
+        carregarJogosHome();
+    }
+    if (document.getElementById('game-title')) {
+        carregarDetalhesJogo();
+    }
 };
