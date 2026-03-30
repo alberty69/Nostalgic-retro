@@ -167,7 +167,24 @@
                                                                                                                                                                                                                                                     header { flex-direction: column; gap: 15px; }
                                                                                                                                                                                                                                                         .details-container { flex-direction: column; }
                                                                                                                                                                                                                                                             .details-left .big-cover { width: 100%; height: 200px; }
-                                                                                                                                                                                                                                                                .terminal-box .input-group { flex-direction: column; }
+                                                                                                                                                                                                                                                                .terminal-box .input-group { flex-direction: column; 
+                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                            
                                                                                                                                                                                                                                                                 }
+                                                                                                                                                                                                                                                    /* --- SISTEMA DE VIEWS (SPA ROUTING) --- */
+.view {
+    display: none; /* Esconde todas as views por padrão */
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.view.active {
+    display: block; /* Mostra apenas a view ativa */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
                                                                                                                                                                                                                                                                 
