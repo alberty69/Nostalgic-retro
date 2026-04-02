@@ -1,19 +1,19 @@
 const gamesData = [
-    { id: 'mario', title: 'Super Mario World', console: 'Nintendo', category: 'Plataforma', color: '#e0115f', short: 'MARIO', desc: 'O clássico absoluto do SNES. Explore mundos e resgate a princesa.' },
-    { id: 'sonic', title: 'Sonic The Hedgehog', console: 'SEGA', category: 'Ação', color: '#0000ff', short: 'SONIC', desc: 'Alta velocidade e loops radicais com o ouriço azul da SEGA.' },
-    { id: 'pacman', title: 'Pac-Man', console: 'Arcade', category: 'Puzzle', color: '#ffd700', short: 'PACMAN', desc: 'Coma todas as pastilhas e evite os fantasmas no labirinto.' },
-    { id: 'zelda', title: 'The Legend of Zelda', console: 'Nintendo', category: 'Aventura', color: '#2e8b57', short: 'ZELDA', desc: 'Explore Hyrule e torne-se o herói do tempo.' },
-    { id: 'sf2', title: 'Street Fighter II', console: 'Arcade', category: 'Luta', color: '#cc0000', short: 'SF II', desc: 'Escolha seu lutador e prove sua força no torneio mundial.' },
-    { id: 'mk', title: 'Mortal Kombat', console: 'Arcade', category: 'Luta', color: '#333', short: 'MK', desc: 'Lutas sangrentas e Fatalities inesquecíveis.' },
-    { id: 'donkey', title: 'Donkey Kong Country', console: 'Nintendo', category: 'Plataforma', color: '#8b4513', short: 'DKC', desc: 'Uma aventura incrível com gráficos revolucionários para a época.' },
-    { id: 'megaman', title: 'Mega Man X', console: 'Nintendo', category: 'Ação', color: '#1e90ff', short: 'MEGA X', desc: 'Derrote os Mavericks e absorva seus poderes.' },
-    { id: 'metroid', title: 'Super Metroid', console: 'Nintendo', category: 'Aventura', color: '#4b0082', short: 'SAMUS', desc: 'Explore o planeta Zebes neste clássico de exploração.' },
-    { id: 'sor', title: 'Streets of Rage', console: 'SEGA', category: 'Ação', color: '#ff4500', short: 'RAGE', desc: 'Beat em up clássico nas ruas dominadas pelo crime.' },
-    { id: 'castlevania', title: 'Castlevania', console: 'Nintendo', category: 'Aventura', color: '#800000', short: 'BELMONT', desc: 'Invada o castelo do Drácula com seu chicote sagrado.' },
-    { id: 'tetris', title: 'Tetris', console: 'Arcade', category: 'Puzzle', color: '#00fa9a', short: 'TETRIS', desc: 'O quebra-cabeça mais viciante da história dos games.' },
-    { id: 'chrono', title: 'Chrono Trigger', console: 'Nintendo', category: 'Aventura', color: '#ff8c00', short: 'CHRONO', desc: 'Viaje pelo tempo para salvar o futuro do mundo.' },
-    { id: 'golden', title: 'Golden Axe', console: 'SEGA', category: 'Ação', color: '#daa520', short: 'AXE', desc: 'Guerreiros bárbaros contra hordas de monstros.' },
-    { id: 'doom', title: 'DOOM', console: 'Arcade', category: 'Ação', color: '#222', short: 'DOOM', desc: 'Enfrente demônios no clássico que definiu os jogos de tiro.' }
+    { id: 'mario', title: 'Super Mario World', console: 'Nintendo', category: 'Plataforma', color: '#e0115f', short: 'MARIO', desc: 'Salve a Princesa Peach em uma das maiores aventuras de plataforma de todos os tempos.' },
+    { id: 'sonic', title: 'Sonic The Hedgehog', console: 'SEGA', category: 'Ação', color: '#0000ff', short: 'SONIC', desc: 'Corra em loops alucinantes e derrote o Dr. Robotnik com o ouriço mais rápido do mundo.' },
+    { id: 'pacman', title: 'Pac-Man', console: 'Arcade', category: 'Puzzle', color: '#ffd700', short: 'PACMAN', desc: 'Coma as pastilhas no labirinto e fuja dos fantasmas Blinky, Pinky, Inky e Clyde.' },
+    { id: 'zelda', title: 'The Legend of Zelda', console: 'Nintendo', category: 'Aventura', color: '#2e8b57', short: 'ZELDA', desc: 'Desbrave o reino de Hyrule e encontre a Master Sword para derrotar o vilão Ganon.' },
+    { id: 'sf2', title: 'Street Fighter II', console: 'Arcade', category: 'Luta', color: '#cc0000', short: 'SF II', desc: 'Escolha seu lutador mundial e use o Hadouken para vencer o torneio!' },
+    { id: 'mk', title: 'Mortal Kombat', console: 'Arcade', category: 'Luta', color: '#333', short: 'MK', desc: 'Participe do torneio fatal e descubra os segredos dos movimentos Fatality.' },
+    { id: 'dkc', title: 'Donkey Kong Country', console: 'Nintendo', category: 'Plataforma', color: '#8b4513', short: 'DKC', desc: 'Recupere o estoque de bananas roubado pelo Rei K. Rool nesta selva 16-bits.' },
+    { id: 'megaman', title: 'Mega Man X', console: 'Nintendo', category: 'Ação', color: '#1e90ff', short: 'MEGA X', desc: 'Assuma o controle de X e derrote os Mavericks para absorver seus poderes especiais.' },
+    { id: 'metroid', title: 'Super Metroid', console: 'Nintendo', category: 'Aventura', color: '#4b0082', short: 'SAMUS', desc: 'Explore o planeta Zebes e enfrente Mother Brain como a caçadora Samus Aran.' },
+    { id: 'sor', title: 'Streets of Rage', console: 'SEGA', category: 'Ação', color: '#ff4500', short: 'RAGE', desc: 'Limpe as ruas da cidade enfrentando o sindicato do crime usando apenas seus punhos.' },
+    { id: 'castlevania', title: 'Castlevania', console: 'Nintendo', category: 'Aventura', color: '#800000', short: 'BELMONT', desc: 'Use o chicote sagrado para invadir o castelo assombrado e derrotar o Conde Drácula.' },
+    { id: 'tetris', title: 'Tetris', console: 'Arcade', category: 'Puzzle', color: '#00fa9a', short: 'TETRIS', desc: 'O quebra-cabeça clássico onde você deve encaixar blocos para limpar as linhas.' },
+    { id: 'chrono', title: 'Chrono Trigger', console: 'Nintendo', category: 'Aventura', color: '#ff8c00', short: 'CHRONO', desc: 'Viaje através das eras para impedir que o parasita Lavos destrua o futuro.' },
+    { id: 'golden', title: 'Golden Axe', console: 'SEGA', category: 'Ação', color: '#daa520', short: 'AXE', desc: 'Escolha seu guerreiro bárbaro e use magias para derrotar hordas de monstros.' },
+    { id: 'doom', title: 'DOOM', console: 'Arcade', category: 'Ação', color: '#222', short: 'DOOM', desc: 'O FPS lendário onde você enfrenta hordas de demônios nas luas de Marte.' }
 ];
 
 function carregarJogosHome() {
@@ -23,7 +23,7 @@ function carregarJogosHome() {
         <div class="game-card" onclick="window.location.href='detalhes.html?id=${g.id}'">
             <div class="game-cover" style="background:${g.color}"><span>${g.short}</span></div>
             <h3 class="game-title">${g.title}</h3>
-            <span class="game-category">${g.console}</span>
+            <span class="game-category" style="font-size:8px; opacity:0.7;">${g.console}</span>
         </div>`).join('');
 }
 
@@ -38,19 +38,30 @@ function carregarDetalhes() {
     cover.style.background = jogo.color;
     cover.innerText = jogo.short;
 
-    // RECOMENDAÇÕES (O que você pediu!)
     const recGrid = document.getElementById('recommendations-grid');
-    const sugeridos = gamesData.filter(g => g.category === jogo.category && g.id !== jogo.id).slice(0, 4);
-    recGrid.innerHTML = sugeridos.map(g => `
-        <div class="game-card" onclick="window.location.href='detalhes.html?id=${g.id}'">
-            <div class="game-cover" style="background:${g.color}"><span>${g.short}</span></div>
-            <h3 class="game-title">${g.title}</h3>
-        </div>`).join('');
+    if(recGrid) {
+        const sugeridos = gamesData
+            .filter(g => g.category === jogo.category && g.id !== jogo.id)
+            .slice(0, 4);
+
+        recGrid.innerHTML = sugeridos.map(g => `
+            <div class="game-card" onclick="window.location.href='detalhes.html?id=${g.id}'">
+                <div class="game-cover" style="background:${g.color}"><span>${g.short}</span></div>
+                <h3 class="game-title">${g.title}</h3>
+            </div>`).join('');
+    }
 }
 
 function gerarMensagem() {
     const nome = document.getElementById("nomeUsuario").value;
-    document.getElementById("resultado").innerText = nome ? `> PLAYER 1: ${nome.toUpperCase()}` : "> INSIRA O NOME!";
+    const res = document.getElementById("resultado");
+    if(nome.trim()) {
+        res.innerText = `> LOGIN ACEITO: ${nome.toUpperCase()}`;
+        res.style.color = "var(--neon-green)";
+    } else {
+        res.innerText = "> ERRO: INSIRA O NOME!";
+        res.style.color = "var(--neon-pink)";
+    }
 }
 
 window.onload = () => {
