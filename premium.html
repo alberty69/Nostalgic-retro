@@ -2,19 +2,25 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nostalgic Retro - Premium</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="scanlines"></div>
+
     <header>
-        <h1 class="logo glow-neon-pink"><a href="index.html" style="text-decoration:none; color:inherit;">NOSTALGIC RETRO</a></h1>
+        <h1 class="logo glow-neon-pink"><a href="index.html">NOSTALGIC RETRO</a></h1>
+        <nav>
+            <a href="index.html">Jogos</a>
+            <a href="premium.html" class="glow-neon-yellow">Premium</a>
+        </nav>
     </header>
 
     <main>
         <section class="subscription-section">
-            <h2 class="section-title glow-neon-pink">ESCOLHA SEU PLANO</h2>
+            <h2 class="section-title glow-neon-pink">PLANOS PREMIUM</h2>
             <div class="plans-container">
                 <div class="plan-card">
                     <h3>MENSAL</h3>
@@ -22,16 +28,24 @@
                     <ul>
                         <li>Sem Anúncios</li>
                         <li>Saves Ilimitados</li>
+                        <li>Todos os Consoles</li>
                     </ul>
                     <button class="btn-retro btn-green">ASSINAR</button>
                 </div>
                 <div class="plan-card highlight">
-                    <h3>ANUAL</h3>
+                    <h3>ANUAL <span class="badge">PROMO</span></h3>
                     <div class="price">R$ 14,90<span>/mês</span></div>
+                    <ul>
+                        <li>Tudo do Mensal</li>
+                        <li>Jogos Exclusivos</li>
+                        <li>Suporte VIP 24h</li>
+                    </ul>
                     <button class="btn-retro btn-yellow">ASSINAR</button>
                 </div>
             </div>
         </section>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

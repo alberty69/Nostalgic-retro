@@ -2,14 +2,16 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nostalgic Retro - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="scanlines"></div>
+
     <header>
-        <h1 class="logo glow-neon-pink"><a href="index.html" style="text-decoration:none; color:inherit;">NOSTALGIC RETRO</a></h1>
+        <h1 class="logo glow-neon-pink"><a href="index.html">NOSTALGIC RETRO</a></h1>
         <nav>
             <a href="index.html">Jogos</a>
             <a href="premium.html" class="glow-neon-yellow">Premium</a>
@@ -30,23 +32,13 @@
         </section>
 
         <section class="catalog-section">
-            <div class="games-grid">
-                <!-- Exemplo de 1 jogo. Você pode copiar este bloco para outros -->
-                <div class="game-card" onclick="window.location.href='detalhes.html?jogo=mario'">
-                    <div class="game-cover" style="background-color: #e0115f;"><span>MARIO</span></div>
-                    <h3 class="game-title">Super Mario World</h3>
-                    <span class="game-category">Nintendo • Plataforma</span>
+            <h2 class="section-title">CATÁLOGO DE JOGOS</h2>
+            <div class="games-grid" id="main-grid">
                 </div>
-
-                <div class="game-card" onclick="window.location.href='detalhes.html?jogo=sonic'">
-                    <div class="game-cover" style="background-color: #0000ff;"><span>SONIC</span></div>
-                    <h3 class="game-title">Sonic The Hedgehog</h3>
-                    <span class="game-category">SEGA • Ação</span>
-                </div>
-                <!-- Repita o bloco acima para mais jogos -->
-            </div>
         </section>
     </main>
+
+    <footer><p>© 2026 NOSTALGIC RETRO - PRESS START TO CONTINUE</p></footer>
     <script src="script.js"></script>
 </body>
 </html>
